@@ -7,6 +7,7 @@ import { softShadows } from "@react-three/drei";
 import { createUseStyles } from 'react-jss';
 import Box from './Box.js';
 const Can = lazy(() => import("./Can3.js"));
+const Random = lazy(() => import("./Random.js"));
 
 const useStyles = createUseStyles({
   wrapper: {
@@ -22,15 +23,6 @@ const useStyles = createUseStyles({
 softShadows();
 
 const value = 2;
-
-function Random({...props }) {
-  const group = useRef();
-  const { nodes, materials } = useGLTF('./random4.gltf');
-  return (
-    <group ref={group} {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.Cube.geometry} material={materials.Material}/>
-    </group>
-  )}
 
 const AnimateFrame = (props) => {
 //  useFrame(({ clock }) => {
