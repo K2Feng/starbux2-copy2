@@ -1,12 +1,12 @@
 import '../App.css';
-import { useContext, useState, Suspense, useRef } from 'react';
+import { lazy, useContext, useState, Suspense, useRef } from 'react';
 import { Canvas, extend, useThree, useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei/core/useGLTF';
 import { OrbitControls } from "@react-three/drei";
 import { softShadows } from "@react-three/drei";
 import { createUseStyles } from 'react-jss';
-import Can from './Can3.js';
 import Box from './Box.js';
+const Can = lazy(() => import("./Can3.js"));
 
 const useStyles = createUseStyles({
   wrapper: {
@@ -51,7 +51,7 @@ export default function Theater() {
   const defaultScale = 1.0;
   const [randomShapeScale, setRandomShapeScale] = useState(defaultScale);
   return (
-    <div className = {classes.wrapper} style={{padding: 10}}>
+    <Suspense fallback={"loading"}>
       <Canvas shadows camera={{ position: [10, 10, 15], fov: 60}}>
         <OrbitControls target={[-3, 0, -3]} />
         <ambientLight intensity={0.5} />
@@ -67,7 +67,6 @@ export default function Theater() {
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         />
-        <Suspense fallback={null}>
           <Can scale={0.3} position={[0, -1, 0]}/>
           <mesh receiveShadow castShadow
             scale={0.5}
@@ -82,8 +81,7 @@ export default function Theater() {
             <planeBufferGeometry attach="geometry" args={[100, 100]} />
             <shadowMaterial attach="material" transparent opacity={0.4} />
           </mesh>
-        </Suspense>
       </Canvas>
-    </div>
+    </Suspense>
 )
 }
