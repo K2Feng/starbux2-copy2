@@ -13,7 +13,7 @@ export default function Navigation() {
   const classes = useStyles();
   return(
     <div className={classes.wrapper}>
-      Welcome, Kwame
+      Welcome, Feng!
     </div>
   )
 }

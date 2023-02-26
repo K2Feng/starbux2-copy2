@@ -10,6 +10,11 @@
       "StackName": "amplify-starbuxcopy-dev-81202",
       "StackId": "arn:aws:cloudformation:us-east-1:787276959071:stack/amplify-starbuxcopy-dev-81202/29dd2bb0-b5d7-11ed-bf8b-12f9630ea3bd",
       "AmplifyAppId": "d3u1s22s9vdolx"
+    },
+    "categories": {
+      "api": {
+        "starbuxcopy": {}
+      }
     }
   }
 }
