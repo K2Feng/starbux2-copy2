@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Can({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('../../../public/can3.gltf')
+  const { nodes, materials } = useGLTF('../../public/can3.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, -0.03, 0.01]} rotation={[1.57, 0, 0.85]}>
