@@ -8,11 +8,11 @@ import { useGLTF } from '@react-three/drei'
 export default function Random({ ...props }) {
 
   const group = useRef();
-  const { nodes, materials } = useGLTF('/random4.gltf');
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/random4.gltf');
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.Cube.geometry} material={materials.Material}/>
     </group>
   )}
 
-useGLTF.preload('/random4.gltf');
+useGLTF.preload(process.env.PUBLIC_URL + '/random4.gltf');
