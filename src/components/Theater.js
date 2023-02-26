@@ -59,7 +59,6 @@ export default function Theater() {
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         />
-          <Can scale={0.3} position={[0, -1, 0]}/>
           <mesh receiveShadow castShadow
             scale={0.5}
             ref={myMesh}>
@@ -68,7 +67,10 @@ export default function Theater() {
           </mesh>
           <AnimateFrame value={value} meshRef={myMesh}/>
           <Box scale={7} position={[-2.2, 2, 0]} />
-          <Random value={value} scale={randomShapeScale} position ={[2.5,0,0]}/>
+          <>{
+          //<Can scale={0.3} position={[0, -1, 0]}/>
+          //<Random value={value} scale={randomShapeScale} position ={[2.5,0,0]}/>
+          }</>
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]} receiveShadow>
             <planeBufferGeometry attach="geometry" args={[100, 100]} />
             <shadowMaterial attach="material" transparent opacity={0.4} />
