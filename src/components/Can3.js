@@ -18,4 +18,4 @@ export default function Can({ ...props }) {
   )
 }
 
-useGLTF.preload('/can3.gltf')
+useGLTF.preload('../../public/can3.gltf')
