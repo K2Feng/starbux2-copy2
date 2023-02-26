@@ -1,13 +1,12 @@
-import './App.css';
+import '../App.css';
 import { useState, Suspense, useRef, createContext } from 'react';
-import React from 'react';
-import Syrups from './components/Syrups.js';
-import Milks from './components/Milks.js';
-import Espressos from './components/Espressos.js';
+import Syrups from './Syrups.js';
+import Milks from './Milks.js';
+import Espressos from './Espressos.js';
 import { Link, Route, Routes } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import Navigation from './components/Navigation';
-import Theater from './components/Theater';
+import Navigation from './Navigation';
+import Theater from './Theater';
 
 export const ordersContext = createContext();
 

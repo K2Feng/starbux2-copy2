@@ -1,0 +1,12 @@
+This is a react program that similar to starbux register
+
+start with "npm start"
+
+And not finish yet
+
+need:
+
+1: next drink button to push the drink object to array
+2: style the drink print out on the left
+3: better desigh
+
