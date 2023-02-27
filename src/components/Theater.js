@@ -6,10 +6,10 @@ import { OrbitControls } from "@react-three/drei";
 import { softShadows } from "@react-three/drei";
 import { createUseStyles } from 'react-jss';
 import Box from './Box.js';
-import Can from "./Can3.js";
-import Random from "./Random.js";
-//const Can = lazy(() => import("./Can3.js"));
-//const Random = lazy(() => import("./Random.js"));
+//import Can from "./Can3.js";
+//import Random from "./Random.js";
+const Can = lazy(() => import("./Can3.js"));
+const Random = lazy(() => import("./Random.js"));
 
 const useStyles = createUseStyles({
   wrapper: {
