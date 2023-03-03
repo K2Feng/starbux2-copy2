@@ -4,7 +4,7 @@ import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { createTodo } from './graphql/mutations';
-import { listTodos} from './graphql/queries';
+import { listTodos } from './graphql/queries';
 import awsExports from "./aws-exports";
 
 import React from 'react';
@@ -46,7 +46,7 @@ function App({ signOut, user }) {
   async function fetchTodos() {
     try {
       const todoData = await API.graphql(graphqlOperation(listTodos));
-      const todo = todoData.data.listTodos.items
+      const todos = todoData.data.listTodos.items
       setTodos(todos);
     } catch (err) { console.log('error fetching todos')}
   };
