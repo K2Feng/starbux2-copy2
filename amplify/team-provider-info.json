@@ -14,6 +14,9 @@
     "categories": {
       "api": {
         "starbuxcopy": {}
+      },
+      "auth": {
+        "starbuxcopy0fe58ac5": {}
       }
     }
   }

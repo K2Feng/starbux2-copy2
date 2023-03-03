@@ -1,6 +1,8 @@
 import './App.css';
 import { useEffect, useState, Suspense, useRef, createContext } from 'react';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 import { createTodo } from './graphql/mutations';
 import { listTodos} from './graphql/queries';
 import awsExports from "./aws-exports";
@@ -20,7 +22,7 @@ const initialState = { name: '', description:'' }
 
 export const ordersContext = createContext();
 
-export default function App() {
+function App({ signOut, user }) {
   const styles = {
   container: { width: 400, margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20 },
   todo: {  marginBottom: 15 },
@@ -106,9 +108,12 @@ export default function App() {
   }
 
   return (
+
     <ordersContext.Provider value={{orders, setOrders}}>
     <Navigation />
     <div style={styles.container}>
+      <Heading level={1}>Hello {user.username}</Heading>
+      <Button onClick={signOut}>Sign out</Button>
       <h2>Amplify Todos</h2>
       <input
         onChange={event => setInput('name', event.target.value)}
@@ -195,3 +200,4 @@ export default function App() {
 
 }
 
+export default withAuthenticator(App);
