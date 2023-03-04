@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "starbuxcopy",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authstarbuxcopy0fe58ac5",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
